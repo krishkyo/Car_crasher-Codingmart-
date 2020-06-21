@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col" id="lane1" onclick="myfun(1)">
+                <div class="waterfall1" id="car1"></div>
+        </div>
+        <div class="col" id="lane2" onclick="myfun(2)">
+                <div class="waterfall" id="car2"></div>
+        </div>
+        <div class="col" id="lane3" onclick="myfun(3)">
+                <div class="waterfall" id="car3"></div>
+        </div>
+    </div>
+    <script>   
+        function myfun(i){
+            var node = document.createElement("div");
+            node.className="downcar1"; 
+            node.id='redcar1';  
+            var textnode = document.createTextNode("");         
+            node.appendChild(textnode);                         
+            document.getElementById("lane"+i).appendChild(node);
+            var testDiv = document.getElementById("car"+i);
+            // var num = testDiv.offsetTop;
+            var check=500;
+            myvar = setInterval(()=>{
+                console.log(testDiv.offsetTop);
+                if((testDiv.offsetTop)>check){
+                    alert("car crashed");
+                    clearInterval(myvar);
+                    document.getElementById("lane"+i).innerHTML="";
+                    //creating a bluecar
+                    var node = document.createElement("div");
+                    node.className="waterfall"; 
+                    node.id='car'+i;     // Create a <li> node
+                    var textnode = document.createTextNode("");         // Create a text node
+                    node.appendChild(textnode);                              // Append the text to <li>
+                    document.getElementById("lane"+i).appendChild(node);
+                }else{
+                    check-=12;
+                }
+            },100) 
+        }
+    </script>
+</body>
+</html>

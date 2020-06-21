@@ -1,0 +1,67 @@
+body{
+    background-color: black;
+}
+.row{
+    height: 600px;
+    width: 100%;
+    background-color: aqua;
+    position: relative;
+}
+.col{
+    width: 150px;
+    height: 600px;
+    position: absolute;
+    left: 100px;
+    background-color:white;
+}
+#lane2{
+    left: 550px;
+}
+#lane3{
+    left: 1000px;
+}
+.waterfall1 {
+    width: 100px;
+  height: 100px;
+  background:blue;
+  position: relative;
+  margin-left:15%;
+  animation: myfirst 4s infinite;
+  animation-timing-function: linear;
+}
+
+.waterfall {
+    width: 100px;
+  height: 100px;
+  background:blue;
+  position: relative;
+  margin-left:15%;
+  animation: myfirst 5s infinite;
+  animation-timing-function: linear;
+}
+.downcar1 {
+    width: 100px;
+  height: 100px;
+  background:red;
+  position: relative;
+  margin-left:15%;
+  animation: myfirstdown 5s infinite;
+  animation-timing-function: linear;
+}
+/* #redcar1{
+  height: 150px;
+} */
+#car2{
+    animation-delay: 1s;
+}
+#car3{
+    animation-delay: 0.5s;
+}
+@keyframes myfirst {
+    from {background:blue; left: 0px; top: 0px;}
+    to {background: blue; left: 0px; top: 500px;}
+  }
+  @keyframes myfirstdown {
+    0%   {background:red; left: 0px; top: 500px;}
+    100% {background: red; left: 0px; top: -100px;}
+  }
